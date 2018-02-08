@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FootBallTeamApp", "FootBallTeamApp\FootBallTeamApp.csproj", "{BF75A1DE-1830-443A-B316-EABFDB3B327A}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BL", "BL", "{6EE06B9C-33F4-45A0-A9B8-DC98BED570B1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BL.CORE", "BL.CORE\BL.CORE.csproj", "{EB7ACDD2-C317-489A-A5CD-D73402892986}"
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BF75A1DE-1830-443A-B316-EABFDB3B327A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF75A1DE-1830-443A-B316-EABFDB3B327A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF75A1DE-1830-443A-B316-EABFDB3B327A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF75A1DE-1830-443A-B316-EABFDB3B327A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{EB7ACDD2-C317-489A-A5CD-D73402892986}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EB7ACDD2-C317-489A-A5CD-D73402892986}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EB7ACDD2-C317-489A-A5CD-D73402892986}.Release|Any CPU.ActiveCfg = Release|Any CPU

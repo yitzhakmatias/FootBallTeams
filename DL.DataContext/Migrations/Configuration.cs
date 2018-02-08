@@ -29,51 +29,52 @@ namespace DL.DataContext.Migrations
             //      new Person { FullName = "Rowan Miller" }
             //    );
             //
-            context.Teams.AddOrUpdate(p => p.TeamId,
-                new Team() { Name = "Barcelona", Score = "9" },
-                new Team() { Name = "Real Madrid", Score = "9" },
-                new Team() { Name = "Atletico de Madrid", Score = "12" },
-                new Team() { Name = "Parma", Score = "21" },
-                new Team() { Name = "Juventus", Score = "6" },
-                new Team() { Name = "Manchester UD", Score = "12" },
-                new Team() { Name = "Manchester City", Score = "0" },
-                new Team() { Name = "Tothenham", Score = "3" }
-                );
-            context.SaveChanges();
-
             context.Tournaments.AddOrUpdate(p => p.TournamentId,
                 new Tournament()
                 {
-                    Teams = new List<Team>() {
-                        context.Teams.First(x => x.Name.Contains("Barcelona")) ,
-                        context.Teams.First(x => x.Name.Contains("Real Madrid")),
-                        context.Teams.First(x => x.Name.Contains("Atletico de Madrid"))
-                    },
+                    /* Teams = new List<Team>() {
+                         context.Teams.First(x => x.Name.Contains("Barcelona")) ,
+                         context.Teams.First(x => x.Name.Contains("Real Madrid")),
+                         context.Teams.First(x => x.Name.Contains("Atletico de Madrid"))
+                     },*/
                     Name = "Copa del Rey"
                 },
                 new Tournament()
                 {
-                    Teams = new List<Team>() {
+                    /*Teams = new List<Team>() {
                         context.Teams.First(x => x.Name.Contains("Real Madrid")),
                         context.Teams.First(x => x.Name.Contains("Atletico de Madrid"))
-                    },
+                    },*/
                     Name = "Super Liga"
                 },
                 new Tournament()
                 {
-                    Teams = new List<Team>() {
-                        context.Teams.First(x => x.Name.Contains("Real Madrid")),
-                        context.Teams.First(x => x.Name.Contains("Atletico de Madrid")),
-                        context.Teams.First(x => x.Name.Contains("Parma")),
-                        context.Teams.First(x => x.Name.Contains("Juventus")),
-                        context.Teams.First(x => x.Name.Contains("Manchester UD")),
-                        context.Teams.First(x => x.Name.Contains("Manchester City")),
-                        context.Teams.First(x => x.Name.Contains("Tothenham"))
-                    },
+                    /* Teams = new List<Team>() {
+                         context.Teams.First(x => x.Name.Contains("Real Madrid")),
+                         context.Teams.First(x => x.Name.Contains("Atletico de Madrid")),
+                         context.Teams.First(x => x.Name.Contains("Parma")),
+                         context.Teams.First(x => x.Name.Contains("Juventus")),
+                         context.Teams.First(x => x.Name.Contains("Manchester UD")),
+                         context.Teams.First(x => x.Name.Contains("Barcelona")),
+                         context.Teams.First(x => x.Name.Contains("Tothenham"))
+                     },*/
                     Name = "Champions"
                 }
+            );
+            context.SaveChanges();
+            context.Teams.AddOrUpdate(p => p.TeamId,
+                new Team() { Name = "Barcelona", Score = "9" , TournamentId = 1},
+                new Team() { Name = "Real Madrid", Score = "9", TournamentId = 1 },
+                new Team() { Name = "Atletico de Madrid", Score = "12", TournamentId = 3 },
+                new Team() { Name = "Parma", Score = "21", TournamentId = 1 },
+                new Team() { Name = "Juventus", Score = "6", TournamentId = 2},
+                new Team() { Name = "Manchester UD", Score = "12", TournamentId = 3 },
+                new Team() { Name = "Manchester City", Score = "0", TournamentId = 1 },
+                new Team() { Name = "Tothenham", Score = "3", TournamentId = 2 }
                 );
             context.SaveChanges();
+
+            
         }
     }
 }

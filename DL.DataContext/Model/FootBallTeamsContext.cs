@@ -11,9 +11,10 @@ namespace DL.DataContext.Model
 {
     public class FootBallTeamsContext : DbContext, IDbContext
     {
-        public FootBallTeamsContext() : base("name=FootBallTeamsContext")
+        public FootBallTeamsContext()
         {
-
+            this.Database.Connection.ConnectionString = 
+                @"data source=(LocalDb)\MSSQLLocalDB;initial catalog=DL.DataContext.Model.FootBallTeamsContext;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
         }
 
         public virtual DbSet<Team> Teams { get; set; }

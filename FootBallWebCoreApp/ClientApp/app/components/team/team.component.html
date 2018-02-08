@@ -1,0 +1,31 @@
+﻿<h1>Team List</h1>
+
+<p *ngIf="!teams"><em>Loading...</em></p>
+
+<div>
+    <label>Summary: </label>
+    <select (change)="filterTeams($event.target.value)">
+        <option value="0">--All--</option>
+        <option *ngFor="let tournament of tournaments" value={{tournament.tournamentId}}>
+            {{tournament.name}}
+        </option>
+    </select>
+</div>
+
+<table class='table' *ngIf="teams">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Score</th>
+        <th>Tournament</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let team of teams">
+        <td>{{ team.name }}</td>
+        <td>{{ team.score }}</td>
+        <td>{{ team.tournamentId }}</td>
+    </tr>
+    </tbody>
+</table>
