@@ -8,7 +8,7 @@ namespace DL.DataContext.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<DL.DataContext.Model.FootBallTeamsContext>
+    public sealed class Configuration : DbMigrationsConfiguration<DL.DataContext.Model.FootBallTeamsContext>
     {
         public Configuration()
         {

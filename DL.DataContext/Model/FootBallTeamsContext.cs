@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BL.CORE;
+using DL.DataContext.Migrations;
 
 namespace DL.DataContext.Model
 {
@@ -15,6 +16,7 @@ namespace DL.DataContext.Model
         {
             this.Database.Connection.ConnectionString = 
                 @"data source=(LocalDb)\MSSQLLocalDB;initial catalog=DL.DataContext.Model.FootBallTeamsContext;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework";
+            Database.SetInitializer<FootBallTeamsContext>(new CreateDatabaseIfNotExists<FootBallTeamsContext>());
         }
 
         public virtual DbSet<Team> Teams { get; set; }
