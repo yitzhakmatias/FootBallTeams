@@ -37,5 +37,12 @@ namespace FootBallWebCoreApp.Controllers
 
             return data;
         }
+        [HttpGet("[action]")]
+        public IEnumerable<dynamic> GetTeamsScores()
+        {
+            var teams = IoCContainerHelper.Resolve<ITeamRepository>();
+            var data = teams.GetAll().GroupBy(p=>p.Score).Select(x=>x.First()).Select(y=>y.Score).ToList();
+            return data;
+        }
     }
 }
